@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<context:component-scan base-package="kr.co.jhta.*"/>
+
+<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="smtp.naver.com"/>
+	<property name="port" value ="587"/>
+	<property name="username" value="rkdeoguq0"/>
+	<property name="password" value="qlxkals4!"/>
+	<property name="defaultEncoding" value="utf-8"/>
+	<property name="javaMailProperties">
+		<props>
+			<prop key="mail.debug">true</prop>
+			<prop key="mail.smtp.starttls.enable">true</prop>
+			<prop key="mail.smps.ssl.checkserveridentiry">true</prop>
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtps.ssl.trust">*</prop>
+			<prop key="mail.smtp.soketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+		</props>
+	</property>
+	
+</bean>
+
+
+<mvc:default-servlet-handler/>
+
+<mvc:annotation-driven/>
+
+<mvc:view-resolvers>
+	<mvc:jsp prefix="/views/" suffix=".jsp"/>
+</mvc:view-resolvers>
+
+</beans>
