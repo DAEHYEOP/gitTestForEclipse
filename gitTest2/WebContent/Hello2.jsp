@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>send.jsp</h1>
+	<h2>slkld</h2>
 </body>
 </html>
